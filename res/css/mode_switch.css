@@ -1,0 +1,51 @@
+@media (orientation: landscape) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "teacher student";
+    }
+}
+
+@media (orientation: portrait) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "teacher" "student";
+    }
+}
+
+#teacher_button {
+    grid-area: teacher;
+}
+
+#student_button {
+    grid-area: student;
+}
+
+.mode_switch_button {
+    cursor: pointer;
+    margin: 5vmin;
+    border-radius: 5vmin;
+    background-color: var(--background3-color);
+    display: grid;
+    place-items: center;
+}
+
+.mode_switch_button i {
+    transition: color 0.5s;
+    font-size: 25vmin;
+    color: var(--text-color);
+}
+
+.mode_switch_button p {
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    font-size: 7.5vmin;
+}
+
+.mode_switch_button:hover i {
+    color: var(--accent2-color);
+}
