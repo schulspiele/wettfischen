@@ -1,16 +1,70 @@
-body {
+main {
+    height: 100%;
+    width: 100%;
     display: grid;
-    place-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "game_info game_info game_info" "player_list player_list player_list" "player_list player_list player_list";
 }
 
-main div {
-    background-color: var(--background2-color);
-    padding: 0;
-    margin: 0;
+.game_info {
+    grid-area: game_info;
+    display: grid;
+    place-items: center;
+    background-color: var(--background3-color);
+}
+
+.game_details_container {
     color: var(--text2-color);
-    width: fit-content;
     padding: 1rem;
-    margin: 1rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr;
+    gap: 0 0.25rem;
+    grid-template-areas: "join_link game_details";
+}
+
+.join_link {
+    background-color: var(--background2-color);
+    grid-area: join_link;
+    font-size: 3rem;
+    border-radius: 1rem 0 0 1rem;
+    padding: 1rem;
+}
+
+.join_link b {
+    color: var(--accent-color);
+}
+
+.game_details {
+    grid-area: game_details;
+    background-color: var(--background2-color);
+    font-size: 3rem;
+    border-radius: 0 1rem 1rem 0;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "game_id_text" "game_id";
+}
+
+.game_id_text {
+    grid-area: game_id_text;
+    font-size: 50%;
+}
+
+.game_id {
+    grid-area: game_id;
+    font-size: 150%;
+    color: var(--accent-color);
+}
+
+.player_list {
+    grid-area: player_list;
 }
 
 .overlay {
