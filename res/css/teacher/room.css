@@ -1,0 +1,39 @@
+body {
+    display: grid;
+    place-items: center;
+}
+
+main div {
+    background-color: var(--background2-color);
+    padding: 0;
+    margin: 0;
+    color: var(--text2-color);
+    width: fit-content;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: var(--background3-color);
+}
+
+.overlay button {
+    background-color: var(--background3-color);
+    border: #888 1px solid;
+    color: var(--text-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 1rem;
+    transition: transform 0.25s;
+}
+
+.overlay button:hover {
+    transform: translateY(-4px);
+    background-color: #888;
+}
