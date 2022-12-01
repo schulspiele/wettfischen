@@ -1,3 +1,17 @@
+<?php 
+
+    session_start();
+
+    if(!isset($_SESSION['id']) || !isset($_SESSION['pass'])){
+        header("Location: ../");
+    } else {
+        $id = $_SESSION['id'];
+        $pass = $_SESSION['pass'];
+    }
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 
@@ -21,7 +35,7 @@
                 <div class="join_link">Tritt dem Raum bei:<br><b>wettfischen.kortte.de</b></div>
                 <div class="game_details">
                     <div class="game_id_text">Raum-ID:</div>
-                    <div class="game_id">1234</div>
+                    <div class="game_id"><?=$id?></div>
                 </div>
             </div>
         </div>
