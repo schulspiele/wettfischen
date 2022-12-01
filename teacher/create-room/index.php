@@ -25,7 +25,7 @@ function generateID($length){
     $id_charset = "123465789";
     $generated = "";
     for ($i=0; $i < $length; $i++) { 
-        $new_char = substr($id_charset, mt_rand(0, strlen($id_charset)),1);
+        $new_char = substr($id_charset, mt_rand(0, strlen($id_charset) - 1),1);
         $generated .= $new_char;
     }
     return $generated;
