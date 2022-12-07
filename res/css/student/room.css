@@ -10,3 +10,64 @@ main {
     text-align: center;
 }
 
+.overlay {
+    position: absolute;
+    left: 2.5vmin;
+    right: 2.5vmin;
+    top: 2.5vmin;
+    bottom: 2.5vmin;
+    background-color: var(--background3-color);
+    border-radius: 2vmin;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "overlay_top" "overlay_bottom";
+}
+
+.overlay_top {
+    grid-area: overlay_top;
+}
+
+.overlay_bottom {
+    grid-area: overlay_bottom;
+}
+
+.overlay_top,
+.overlay_bottom {
+    display: grid;
+    place-items: center;
+}
+
+.overlay_top {
+    font-size: min(3rem, 10vmin);
+}
+
+.overlay_title,
+.overlay_input {
+    width: fit-content;
+    text-align: center;
+}
+
+.overlay_input input {
+    outline: 0;
+    border: 0;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 3vmin;
+    padding: 0.25rem;
+    min-height: 50px;
+}
+
+#displayname_submit {
+    margin-top: min(2.5vmin, 1rem);
+    border: 0;
+    background-color: var(--background2-color);
+    color: var(--text2-color);
+    font-size: 1rem;
+    border-radius: 3vmin;
+    padding: 0.75rem;
+    min-height: 50px;
+    cursor: pointer;
+}

@@ -35,6 +35,23 @@
 </head>
 
 <body>
+    <div class="overlay">
+        <div class="overlay_top">
+            <div class="overlay_title">
+                Wähle einen Anzeigenamen
+            </div>
+        </div>
+        <div class="overlay_bottom">
+            <div class="overlay_input">
+                <div>
+                    <input type="text" name="displayname" id="displayname_input" maxlength="16" minlength="4">
+                </div>
+                <div>
+                    <button id="displayname_submit" onclick="submitDisplayname(this);">Raum beitreten</button>
+                </div>    
+            </div>
+        </div>
+    </div>
     <main>
         <h1>
             Bitte warte, bis dein(e) Lehrer*in die Runde startet.
