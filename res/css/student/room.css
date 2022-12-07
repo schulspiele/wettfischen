@@ -1,0 +1,12 @@
+body {
+    display: grid;
+    place-items: center;
+    padding: 5vmin;
+}
+
+main {
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+}
+
