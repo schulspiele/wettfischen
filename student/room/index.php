@@ -57,8 +57,8 @@
             Bitte warte, bis dein(e) Lehrer*in die Runde startet.
         </h1>
     </main>
-    <script src="/res/js/student/validate_displayname.js"></script>
     <script src="/res/js/jquery/jquery-3.6.1.min.js"></script>
+    <script src="/res/js/student/validateDisplayname.js"></script>
     <script src="/res/js/student/submitDisplayname.js"></script>
 </body>
 
