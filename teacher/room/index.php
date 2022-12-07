@@ -53,7 +53,7 @@
             </button>
         </div>
     </div>
-    <script src="/res/js/fullscreen.js"></script>
+    <script src="/res/js/teacher/fullscreen.js"></script>
 </body>
 
 </html>
