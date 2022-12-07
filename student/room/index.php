@@ -6,7 +6,7 @@
     $con = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
     if (mysqli_connect_errno()) exit("Error");
 
-    if(!isset($_GET['r']) || !isset($_GET['c'])) header("Location: ../");
+    if(!isset($_GET['r']) || !isset($_GET['c'])) header("Location: ../join-room/");
     $id = $_GET['r'];
     $pass = $_GET['c'];
 
@@ -59,6 +59,7 @@
     </main>
     <script src="/res/js/student/validate_displayname.js"></script>
     <script src="/res/js/jquery/jquery-3.6.1.min.js"></script>
+    <script src="/res/js/student/submitDisplayname.js"></script>
 </body>
 
 </html>
