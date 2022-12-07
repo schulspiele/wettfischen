@@ -1,23 +1,3 @@
-<?php 
-
-    session_start();
-    require('../../config.php');
-
-    $con = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-    if (mysqli_connect_errno()) exit("Error");
-
-    if(!isset($_GET['r']) /*|| !isset($_GET['c'])*/) header("Location: ../join-room/");
-    $id = $_GET['r'];
-    /*$pass = $_GET['c'];*/
-
-    if ($stmt = $con->prepare("SELECT * FROM rooms WHERE namecode = ? /* AND passcode = ? */")) {
-        $stmt->bind_param('s', $id);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows == 0) header("Location: ../join-room/");
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="de">
 
@@ -38,17 +18,18 @@
     <div class="overlay">
         <div class="overlay_top">
             <div class="overlay_title">
-                Wähle einen Anzeigenamen
+                Bitte gib den Raumcode ein
             </div>
         </div>
         <div class="overlay_bottom">
             <div class="overlay_input">
                 <div>
-                    <input type="text" name="displayname" id="displayname_input" maxlength="16" minlength="4">
+                    <input type="text" name="displayname" id="displayname_input" maxlength="4">
                 </div>
                 <div>
-                    <button id="displayname_submit" onclick="submitDisplayname(this);">Raum beitreten</button>
-                </div>    
+                    <!-- Button that redirects to /student/room/?r=[room] -->
+                    <button id="displayname_submit" onclick="location.href = '/student/room/?r=' + document.getElementById('displayname_input').value;">Raum prüfen</button>
+                </div>
             </div>
         </div>
     </div>
