@@ -39,8 +39,7 @@
                 </div>
             </div>
         </div>
-        <div class="player_list">
-
+        <div class="player_list" id="player_list-container">
         </div>
     </main>
     <div class="overlay">
@@ -53,7 +52,9 @@
             </button>
         </div>
     </div>
+    <script src="/res/js/jquery/jquery-3.6.1.min.js"></script>
     <script src="/res/js/teacher/fullscreen.js"></script>
+    <script src="/res/js/teacher/loadStudents.js"></script>
 </body>
 
 </html>
