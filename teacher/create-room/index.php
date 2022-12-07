@@ -35,7 +35,7 @@ function generateID($length){
 $checking_id_double = true;
 while($checking_id_double){  
     $new_id = generateID(4);
-    if ($stmt = $con->prepare("SELECT * FROM sessions WHERE id = ?")) {
+    if ($stmt = $con->prepare("SELECT * FROM rooms WHERE id = ?")) {
         $stmt->bind_param('s', $new_id);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -43,7 +43,7 @@ while($checking_id_double){
         } else {
             $checking_id_double = false;
             $new_pass = generateID(4);
-            $stmt = $con->prepare("INSERT INTO sessions (namecode, passcode) VALUES (?, ?)");
+            $stmt = $con->prepare("INSERT INTO rooms (namecode, passcode) VALUES (?, ?)");
             $stmt->bind_param('ss', $new_id, $new_pass);
             $stmt->execute();
             $stmt->close();
