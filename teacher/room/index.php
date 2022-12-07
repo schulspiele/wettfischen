@@ -32,7 +32,7 @@
     <main>
         <div class="game_info">
             <div class="game_details_container">
-                <div class="join_link">Tritt dem Raum bei:<br><b>wettfischen.kortte.de</b></div>
+                <div class="join_link">Tritt dem Raum bei:<br><b><?=$_SERVER['HTTP_HOST']?></b></div>
                 <div class="game_details">
                     <div class="game_id_text">Raum-ID:</div>
                     <div class="game_id"><?=$id?></div>
