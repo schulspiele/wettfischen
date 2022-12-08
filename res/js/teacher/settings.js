@@ -26,7 +26,7 @@ settings = {
         settings_container_toggle.onclick = settings.open;
         settings_container_toggle.classList.remove("settings_toggle_active");
     },
-    toggle: (element) => {
-        console.log(element);
+    toggle: (element, setting) => {
+        console.log(element, setting);
     }
 }

@@ -60,16 +60,16 @@
         <div class="settings_item" id="room_settings">
             <h1>Raum</h1>
             <ul>
-                <li onclick="settings.toggle(this);" class="settings_active">Raum-ID anzeigen</li>
-                <li onclick="settings.toggle(this);" class="settings_inactive">Raum mit Passwort</li>
-                <li onclick="settings.toggle(this);" class="settings_inactive">QR-Code zeigen (Beta)</li>
+                <li onclick="settings.toggle(this, 'show_roomcode');" class="settings_active">Raum-ID anzeigen</li>
+                <li onclick="settings.toggle(this, 'activate_roompasscode');" class="settings_inactive">Raum mit Passwort</li>
+                <li onclick="settings.toggle(this, 'show_room-qr');" class="settings_inactive">QR-Code zeigen (Beta)</li>
             </ul>
         </div> <hr>
         <div class="settings_item" id="number_settings">
             <h1>Startanzahl</h1>
             <ul>
-                <li onclick="settings.toggle(this);" class="settings_toggle">Zufällig</li>
-                <li onclick="settings.toggle(this);" id="fishnum_settings_input"><input type="number" name="" id="" min="5" value="15"></li>
+                <li onclick="settings.toggle(this, 'random_fishnum');" class="settings_toggle">Zufällig</li>
+                <li id="fishnum_settings_input"><input type="number" name="" id="" min="5" value="15"></li>
             </ul>
         </div>
     </div>
