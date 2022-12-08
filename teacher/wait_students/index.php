@@ -3,7 +3,7 @@
     session_start();
 
     if(!isset($_SESSION['id']) || !isset($_SESSION['pass'])){
-        header("Location: ../");
+        header("Location: ../../");
     } else {
         $id = $_SESSION['id'];
         $pass = $_SESSION['pass'];
@@ -30,20 +30,9 @@
 
 <body>
     <main>
-        <div class="game_info">
-            <div class="game_details_container">
-                <div class="join_link">Tritt dem Raum bei:<br><b><?=$_SERVER['HTTP_HOST']?></b></div>
-                <div class="game_details">
-                    <div class="game_id_text">Raum-ID:</div>
-                    <div class="game_id"><?=$id?></div>
-                </div>
-            </div>
-        </div>
-        <div class="player_list" id="player_list-container">
-        </div>
     </main>
-    <div id="start_button" class="start_button" onclick="room.start();">
-        Start <i class="fas fa-play"></i>
+    <div id="start_button" class="start_button" onclick="room.skip_student_wait();">
+        Runde beenden <i class="fa-solid fa-forward"></i>
     </div>
     <div class="overlay">
         <div class="overlay-content">
@@ -57,7 +46,6 @@
     </div>
     <script src="/res/js/jquery/jquery-3.6.1.min.js"></script>
     <script src="/res/js/teacher/fullscreen.js"></script>
-    <script src="/res/js/teacher/loadStudents.js"></script>
     <script src="/res/js/teacher/gameplay.js"></script>
 </body>
 
