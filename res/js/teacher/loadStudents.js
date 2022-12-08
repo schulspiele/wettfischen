@@ -6,7 +6,6 @@ const player_list = document.getElementById("player_list-container");
 
 function pasteStudents() {
     new_students.forEach(student => {
-        console.log(student);
         const student_div = document.createElement("div");
         student_div.classList.add("player_list-item");
         student_div.innerText = student;
@@ -31,7 +30,6 @@ function loadStudents() {
         type: "POST",
         data: {},
         success: function(data) {
-            console.log(data);
             if (data == "error") console.log("Error loading students");
             if (data != "") {
                 const student_list = JSON.parse(data);
