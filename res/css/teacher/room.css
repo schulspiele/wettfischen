@@ -121,10 +121,10 @@ main {
     font-size: 1rem;
     cursor: pointer;
     padding: 1rem;
-    transition: transform 0.25s;
 }
 
-.overlay button:hover {
+.overlay button:hover,
+.settings_toggle_active {
     transform: translateY(-4px);
-    background-color: #888;
+    background-color: #888 !important;
 }

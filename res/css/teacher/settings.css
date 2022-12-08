@@ -1,0 +1,59 @@
+#settings {
+    display: none;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    width: 0;
+    background-color: var(--background4-color);
+    color: var(--text-color);
+    overflow: auto;
+    text-align: center;
+    padding: 1rem;
+}
+
+.settings_item ul {
+    list-style-type: none;
+    padding: 0;
+    margin: auto;
+    width: 80%;
+}
+
+.settings_item li {
+    padding: 1rem;
+    font-size: 1rem;
+    margin: auto;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    width: 100%;
+    height: fit-content;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.settings_inactive {
+    background-color: #ff000044;
+}
+
+.settings_active {
+    background-color: #00ff0044;
+}
+
+.settings_toggle {
+    background-color: var(--background3-color);
+}
+
+#fishnum_settings_input {
+    width: 100%;
+    height: 150%;
+    padding: 0;
+}
+
+#fishnum_settings_input input {
+    width: 100%;
+    height: 100%;
+    padding: 0.75rem;
+    border: 0;
+    outline: 0;
+    border-radius: 0.5rem;
+}

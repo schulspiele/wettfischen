@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="/res/css/fonts.css">
     <link rel="stylesheet" href="/res/css/main.css">
     <link rel="stylesheet" href="/res/css/teacher/room.css">
+    <link rel="stylesheet" href="/res/css/teacher/settings.css">
 </head>
 
 <body>
@@ -45,20 +46,38 @@
     <div id="start_button" class="start_button" onclick="room.start();">
         Start <i class="fas fa-play"></i>
     </div>
-    <div class="overlay">
+    <div class="overlay" id="quick_action-overlay">
         <div class="overlay-content">
             <button class="fullscreen-button" onclick="toggleFullScreen();">
                 <i class="fas fa-expand"></i>
             </button>
-            <button class="settings-button">
+            <button class="settings-button" id="settings_toggle" onclick="settings.open();">
                 <i class="fas fa-cog"></i>
             </button>
+        </div>
+    </div>
+    <div class="settings" id="settings">
+        <div class="settings_item" id="room_settings">
+            <h1>Raum</h1>
+            <ul>
+                <li onclick="settings.toggle(this);" class="settings_active">Raum-ID anzeigen</li>
+                <li onclick="settings.toggle(this);" class="settings_inactive">Raum mit Passwort</li>
+                <li onclick="settings.toggle(this);" class="settings_inactive">QR-Code zeigen (Beta)</li>
+            </ul>
+        </div> <hr>
+        <div class="settings_item" id="number_settings">
+            <h1>Startanzahl</h1>
+            <ul>
+                <li onclick="settings.toggle(this);" class="settings_toggle">Zufällig</li>
+                <li onclick="settings.toggle(this);" id="fishnum_settings_input"><input type="number" name="" id="" min="5" value="15"></li>
+            </ul>
         </div>
     </div>
     <script src="/res/js/jquery/jquery-3.6.1.min.js"></script>
     <script src="/res/js/teacher/fullscreen.js"></script>
     <script src="/res/js/teacher/loadStudents.js"></script>
     <script src="/res/js/teacher/gameplay.js"></script>
+    <script src="/res/js/teacher/settings.js"></script>
 </body>
 
 </html>
