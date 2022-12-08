@@ -42,6 +42,9 @@
         <div class="player_list" id="player_list-container">
         </div>
     </main>
+    <div id="start_button" class="start_button">
+        Start <i class="fas fa-play"></i>
+    </div>
     <div class="overlay">
         <div class="overlay-content">
             <button class="fullscreen-button" onclick="toggleFullScreen()">
