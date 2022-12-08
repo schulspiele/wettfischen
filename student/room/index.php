@@ -10,11 +10,13 @@
     $id = $_GET['r'];
     /*$pass = $_GET['c'];*/
 
-    if ($stmt = $con->prepare("SELECT * FROM rooms WHERE namecode = ? /* AND passcode = ? */")) {
+    if ($stmt = $con->prepare("SELECT status FROM rooms WHERE namecode = ? /* AND passcode = ? */")) {
         $stmt->bind_param('s', $id);
         $stmt->execute();
         $result = $stmt->get_result();
-        if ($result->num_rows == 0) header("Location: ../join-room/");
+        $row = $result->fetch_assoc();
+        if ($row['status'] != 9) header("Location: ../join-room/");
+        $stmt->close();
     }
 ?>
 
