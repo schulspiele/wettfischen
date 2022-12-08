@@ -60,6 +60,7 @@
     <script src="/res/js/jquery/jquery-3.6.1.min.js"></script>
     <script src="/res/js/student/validateDisplayname.js"></script>
     <script src="/res/js/student/submitDisplayname.js"></script>
+    <script src="/res/js/student/checkRoomReady.js"></script>
 </body>
 
 </html>

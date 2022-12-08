@@ -24,11 +24,14 @@
         if ($result->num_rows > 0) exit("Error");
         $stmt->close();
 
+        $_SESSION['displayname'] = $displayname;
+
         // Insert displayname into database table (users)
         // Columns: name, room, type = 1
         if ($stmt = $con->prepare("INSERT INTO users (name, room, type) VALUES (?, ?, 1)")) {
             $stmt->bind_param('ss', $displayname, $room);
             $stmt->execute();
+            $_SESSION['id'] = $con->insert_id;
             $stmt->close();
             exit("success");
         }
