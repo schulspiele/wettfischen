@@ -42,7 +42,7 @@ while($checking_id_double){
         if ($result->num_rows > 0) {
         } else {
             $checking_id_double = false;
-            $new_pass = generateID(4);
+            $new_pass = chr(generateID(1) + 64) . chr(generateID(1) + 64) . chr(generateID(1) + 64) . chr(generateID(1) + 64);
             $stmt = $con->prepare("INSERT INTO rooms (namecode, passcode) VALUES (?, ?)");
             $stmt->bind_param('ss', $new_id, $new_pass);
             $stmt->execute();
