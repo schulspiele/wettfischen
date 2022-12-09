@@ -65,7 +65,7 @@ settings = {
                 $.ajax({
                     url: "/res/php/teacher/setRoomPasscode.php",
                     type: "POST",
-                    data: { passcode: settings.vars.activate_roompasscode },
+                    data: { require_pass: settings.vars.activate_roompasscode },
                     success: function(data) {
                         console.log(data);
                     }
