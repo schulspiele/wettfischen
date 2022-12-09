@@ -62,6 +62,14 @@ settings = {
                     settings.vars.activate_roompasscode = true;
                     gen_qrcode(true);
                 }
+                $.ajax({
+                    url: "/res/php/teacher/setRoomPasscode.php",
+                    type: "POST",
+                    data: { passcode: settings.vars.activate_roompasscode },
+                    success: function(data) {
+                        console.log(data);
+                    }
+                });
                 break;
             case "show_room-qr":
                 settings.toggle_active(element);

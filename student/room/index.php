@@ -6,17 +6,18 @@
     $con = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
     if (mysqli_connect_errno()) exit("Error");
 
-    if(!isset($_GET['r']) /*|| !isset($_GET['c'])*/) header("Location: ../join-room/");
+    if(!isset($_GET['r'])) header("Location: ../join-room/");
     $id = $_GET['r'];
-    /*$pass = $_GET['c'];*/
 
-    if ($stmt = $con->prepare("SELECT status FROM rooms WHERE namecode = ? /* AND passcode = ? */")) {
+    if ($stmt = $con->prepare("SELECT status, passcode, require_pass FROM rooms WHERE namecode = ? /* AND passcode = ? */")) {
         $stmt->bind_param('s', $id);
         $stmt->execute();
-        $result = $stmt->get_result();
-        $row = $result->fetch_assoc();
-        if ($row['status'] != 9) header("Location: ../join-room/");
+        $stmt->store_result();
+        $stmt->bind_result($status, $passcode, $require_pass);
+        $stmt->fetch();
         $stmt->close();
+        if ($status != 9 ) header("Location: ../join-room/");
+        if ($require_pass == 1) if (!isset($_GET['c']) || $passcode != $_GET['c']) header("Location: ../join-room/passcode.php?r=$id");
     }
 ?>
 

@@ -60,7 +60,8 @@ main {
     min-height: 50px;
 }
 
-#displayname_submit {
+#displayname_submit,
+#roomcode_submit {
     margin-top: min(2.5vmin, 1rem);
     border: 0;
     background-color: var(--background2-color);
