@@ -5,7 +5,6 @@ const start_button = document.getElementById("start_button");
 const settings_container_toggle = document.getElementById("settings_toggle");
 const game_id_display = document.getElementById("game_id-display");
 const game_pass_details = document.getElementById("game_pass_details");
-const game_details_container = document.getElementById("game_details_container");
 
 
 settings = {
@@ -54,11 +53,9 @@ settings = {
                 settings.toggle_active(element);
                 if (settings.vars.activate_roompasscode) {
                     game_pass_details.style.display = "none";
-                    game_details_container.style.gridTemplateAreas = '"join_link game_details"';
                     settings.vars.activate_roompasscode = false;
                 } else {
                     game_pass_details.style.display = "grid";
-                    game_details_container.style.gridTemplateAreas = '"join_link game_pass_details game_details"';
                     settings.vars.activate_roompasscode = true;
                 }
                 break;
