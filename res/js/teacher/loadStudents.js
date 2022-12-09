@@ -3,6 +3,7 @@ let new_students = [];
 let reload_timeout = 2500;
 
 const player_list = document.getElementById("player_list-container");
+const start_room_button = document.getElementById("start_button");
 
 function pasteStudents() {
     new_students.forEach(student => {
@@ -16,6 +17,13 @@ function pasteStudents() {
     window.setTimeout(loadStudents, reload_timeout);
 }
 
+function checkEnoughStudents() {
+    if (students.length < 2) {
+        start_room_button.style.display = "none";
+    } else {
+        start_room_button.style.display = "block";
+    }
+}
 
 function loadStudents() {
     const url = new URL(window.location.href);
@@ -38,6 +46,7 @@ function loadStudents() {
                     if (!students.includes(student)) new_students.push(student);
                 });
                 pasteStudents();
+                checkEnoughStudents();
             } else {
                 window.setTimeout(loadStudents, reload_timeout);
             }

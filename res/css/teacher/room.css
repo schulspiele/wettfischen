@@ -143,10 +143,11 @@ main {
     cursor: pointer;
     transition: transform 0.25s;
     box-shadow: 0px 0px 0.25rem 0.25rem var(--accent-color);
+    display: none;
 }
 
 .start_button:hover {
-    transform: translateY( 4px);
+    transform: translateY(4px);
 }
 
 .overlay {
