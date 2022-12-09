@@ -33,7 +33,7 @@
     <main>
         <div class="game_info">
             <div class="game_details_container" id="game_details_container">
-                <div class="join_link">Tritt dem Raum bei:<br><b><?=$_SERVER['HTTP_HOST']?></b></div>
+                <div class="join_link">Tritt dem Raum bei:<br><b><span id="server_host_url"><?=$_SERVER['HTTP_HOST']?></span></b></div>
                 <div class="game_details">
                     <div class="game_id_text">Raum-ID:</div>
                     <div class="game_id" id="game_id-display"><?=$id?></div>
@@ -42,6 +42,7 @@
                     <div class="game_pass_text">Raum-Passwort:</div>
                     <div class="game_pass" id="game_pass-display"><?=$pass?></div>
                 </div>
+                <div class="game_qrcode" id="game_qrcode"></div>
             </div>
         </div>
         <div class="player_list" id="player_list-container">
@@ -66,7 +67,7 @@
             <ul>
                 <li onclick="settings.toggle(this, 'show_roomcode');" class="settings_active">Raum-ID anzeigen</li>
                 <li onclick="settings.toggle(this, 'activate_roompasscode');" class="settings_inactive">Raum mit Passwort</li>
-                <li onclick="settings.toggle(this, 'show_room-qr');" class="settings_inactive">QR-Code zeigen (Beta)</li>
+                <li onclick="settings.toggle(this, 'show_room-qr');" class="settings_active">QR-Code zeigen</li>
             </ul>
         </div> <hr>
         <div class="settings_item" id="number_settings">
@@ -78,9 +79,11 @@
         </div>
     </div>
     <script src="/res/js/jquery/jquery-3.6.1.min.js"></script>
+    <script src="/res/js/qrcode/qrcode.js"></script>
     <script src="/res/js/teacher/fullscreen.js"></script>
     <script src="/res/js/teacher/loadStudents.js"></script>
     <script src="/res/js/teacher/gameplay.js"></script>
+    <script src="/res/js/teacher/qrcode.js"></script>
     <script src="/res/js/teacher/settings.js"></script>
 </body>
 

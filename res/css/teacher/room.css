@@ -23,7 +23,7 @@ main {
     grid-template-columns: auto;
     grid-template-rows: 1fr;
     gap: 0 0.25rem;
-    grid-template-areas: "join_link game_details game_pass_details";
+    grid-template-areas: "join_link game_details game_pass_details game_qrcode";
 }
 
 .join_link {
@@ -88,6 +88,24 @@ main {
     font-size: 150%;
     color: var(--accent-color);
     text-align: center;
+}
+
+.game_qrcode {
+    grid-area: game_qrcode;
+    width: 10rem;
+    height: 10rem;
+    object-fit: contain;
+    padding: 0.5rem;
+    background-color: var(--background2-color);
+    border-radius: 1rem;
+    margin-left: 0.5rem;
+}
+
+.game_qrcode * {
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .player_list {

@@ -5,6 +5,8 @@ const start_button = document.getElementById("start_button");
 const settings_container_toggle = document.getElementById("settings_toggle");
 const game_id_display = document.getElementById("game_id-display");
 const game_pass_details = document.getElementById("game_pass_details");
+const game_details_container = document.getElementById("game_details_container");
+const game_qrcode = document.getElementById("game_qrcode");
 
 
 settings = {
@@ -54,14 +56,22 @@ settings = {
                 if (settings.vars.activate_roompasscode) {
                     game_pass_details.style.display = "none";
                     settings.vars.activate_roompasscode = false;
+                    gen_qrcode(false);
                 } else {
                     game_pass_details.style.display = "grid";
                     settings.vars.activate_roompasscode = true;
+                    gen_qrcode(true);
                 }
                 break;
             case "show_room-qr":
                 settings.toggle_active(element);
-
+                if (settings.vars.show_room_qr) {
+                    game_qrcode.style.display = "none";
+                    settings.vars.show_room_qr = false;
+                } else {
+                    game_qrcode.style.display = "block";
+                    settings.vars.show_room_qr = true;
+                }
                 break;
             case "random_fishnum":
                 settings.toggle_active(element);
@@ -76,7 +86,7 @@ settings = {
         roomcode: "1234",
         show_roomcode: true,
         activate_roompasscode: false,
-        show_room_qr: false,
+        show_room_qr: true,
         random_fishnum: true,
         fishnum: 15
     }
