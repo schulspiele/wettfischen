@@ -7,6 +7,9 @@ const game_id_display = document.getElementById("game_id-display");
 const game_pass_details = document.getElementById("game_pass_details");
 const game_details_container = document.getElementById("game_details_container");
 const game_qrcode = document.getElementById("game_qrcode");
+const fishnum_settings_toggle = document.getElementById("fishnum_settings_toggle");
+const fishnum_settings_input = document.getElementById("fishnum_settings_input");
+const fishnum_settings_input_input = document.getElementById("fishnum_settings_input_input");
 
 
 settings = {
@@ -83,7 +86,17 @@ settings = {
                 break;
             case "random_fishnum":
                 settings.toggle_active(element);
-
+                if (settings.vars.random_fishnum) {
+                    fishnum_settings_input.style.display = "block";
+                    fishnum_settings_toggle.innerHTML = "Genau";
+                    setFishNum(false, fishnum_settings_input_input.value);
+                    settings.vars.random_fishnum = false;
+                } else {
+                    fishnum_settings_input.style.display = "none";
+                    fishnum_settings_toggle.innerHTML = "Zufällig";
+                    setFishNum(true);
+                    settings.vars.random_fishnum = true;
+                }
                 break;
             default:
                 console.log(element, setting);

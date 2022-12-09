@@ -174,3 +174,7 @@ main {
     transform: translateY(-4px);
     background-color: #888 !important;
 }
+
+#fishnum_settings_input {
+    display: none;
+}

@@ -73,8 +73,8 @@
         <div class="settings_item" id="number_settings">
             <h1>Startanzahl</h1>
             <ul>
-                <li onclick="settings.toggle(this, 'random_fishnum');" class="settings_toggle">Zufällig</li>
-                <li id="fishnum_settings_input"><input type="number" name="" id="" min="5" value="15"></li>
+                <li onclick="settings.toggle(this, 'random_fishnum');" class="settings_toggle" id="fishnum_settings_toggle">Zufällig</li>
+                <li id="fishnum_settings_input"><input type="number" id="fishnum_settings_input_input" min="5" value="15"></li>
             </ul>
         </div>
     </div>
@@ -85,6 +85,7 @@
     <script src="/res/js/teacher/gameplay.js"></script>
     <script src="/res/js/teacher/qrcode.js"></script>
     <script src="/res/js/teacher/settings.js"></script>
+    <script src="/res/js/teacher/setFishNum.js"></script>
 </body>
 
 </html>
