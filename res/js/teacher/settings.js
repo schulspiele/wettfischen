@@ -3,6 +3,9 @@ const main = document.querySelector("main");
 const QAO = document.getElementById("quick_action-overlay");
 const start_button = document.getElementById("start_button");
 const settings_container_toggle = document.getElementById("settings_toggle");
+const game_id_display = document.getElementById("game_id-display");
+const game_pass_details = document.getElementById("game_pass_details");
+const game_details_container = document.getElementById("game_details_container");
 
 
 settings = {
@@ -26,7 +29,60 @@ settings = {
         settings_container_toggle.onclick = settings.open;
         settings_container_toggle.classList.remove("settings_toggle_active");
     },
+    toggle_active: (element) => {
+        if (element.classList.contains("settings_active")) {
+            element.classList.remove("settings_active");
+            element.classList.add("settings_inactive");
+        } else {
+            element.classList.add("settings_active");
+            element.classList.remove("settings_inactive");
+        }
+    },
     toggle: (element, setting) => {
-        console.log(element, setting);
+        switch (setting) {
+            case "show_roomcode":
+                settings.toggle_active(element);
+                if (settings.vars.show_roomcode) {
+                    game_id_display.innerText = "????";
+                    settings.vars.show_roomcode = false;
+                } else {
+                    game_id_display.innerText = settings.vars.roomcode;
+                    settings.vars.show_roomcode = true;
+                }
+                break;
+            case "activate_roompasscode":
+                settings.toggle_active(element);
+                if (settings.vars.activate_roompasscode) {
+                    game_pass_details.style.display = "none";
+                    game_details_container.style.gridTemplateAreas = '"join_link game_details"';
+                    settings.vars.activate_roompasscode = false;
+                } else {
+                    game_pass_details.style.display = "grid";
+                    game_details_container.style.gridTemplateAreas = '"join_link game_pass_details game_details"';
+                    settings.vars.activate_roompasscode = true;
+                }
+                break;
+            case "show_room-qr":
+                settings.toggle_active(element);
+
+                break;
+            case "random_fishnum":
+                settings.toggle_active(element);
+
+                break;
+            default:
+                console.log(element, setting);
+                break;
+        }
+    },
+    vars: {
+        roomcode: "1234",
+        show_roomcode: true,
+        activate_roompasscode: false,
+        show_room_qr: false,
+        random_fishnum: true,
+        fishnum: 15
     }
 }
+
+settings.vars.roomcode = game_id_display.innerText;

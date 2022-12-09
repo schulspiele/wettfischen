@@ -32,11 +32,15 @@
 <body>
     <main>
         <div class="game_info">
-            <div class="game_details_container">
+            <div class="game_details_container" id="game_details_container">
                 <div class="join_link">Tritt dem Raum bei:<br><b><?=$_SERVER['HTTP_HOST']?></b></div>
                 <div class="game_details">
                     <div class="game_id_text">Raum-ID:</div>
-                    <div class="game_id"><?=$id?></div>
+                    <div class="game_id" id="game_id-display"><?=$id?></div>
+                </div>
+                <div class="game_pass_details" id="game_pass_details">
+                    <div class="game_pass_text">Raum-Passwort:</div>
+                    <div class="game_pass" id="game_pass-display"><?=$pass?></div>
                 </div>
             </div>
         </div>
