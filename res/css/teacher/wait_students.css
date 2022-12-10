@@ -21,16 +21,23 @@ main {
     color: var(--accent-color);
 }
 
+#main_container {
+    background-color: #888;
+    border-radius: 1rem;
+}
+
 .container {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto min-content;
-    gap: 0px 0px;
+    gap: 0.5rem 0.5rem;
     grid-auto-flow: row;
-    grid-template-areas: "student_infotext" "roominfo";
+    grid-template-areas: "student_infotext student_infotext" "roominfo_id roominfo_passcode";
     background-color: var(--background2-color);
     border-radius: 1rem;
     padding: 1rem;
+    text-align: center;
+    color: var(--text2-color);
 }
 
 .student_infotext {
@@ -39,11 +46,21 @@ main {
 
 .student_infotext h1 {
     font-size: 5vmin;
-    color: var(--text2-color);
+    margin: 1rem;
+}
+
+.roominfo_id {
+    grid-area: roominfo_id;
+    color: var(--text3-color);
+}
+
+.roominfo_passcode {
+    grid-area: roominfo_passcode;
+    color: var(--text3-color);
 }
 
 .roominfo {
-    grid-area: roominfo;
+    color: var(--accent2-color);
 }
 
 

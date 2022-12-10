@@ -43,11 +43,17 @@
 
 <body>
     <main>
-        <div class="container">
-            <div class="student_infotext">
-                <h1>Bitte wählt wie viel ihr Fischen wollt</h1>
-            </div>
-            <div class="roominfo">
+        <div id="main_container">
+            <div class="container">
+                <div class="student_infotext">
+                    <h1>Bitte wählt wie viel ihr Fischen wollt</h1>
+                </div>
+                <div class="roominfo_id roominfo_container">
+                    <span>Raum-ID: <span class="roominfo"><?=$id?></span></span>
+                </div>
+                <div class="roominfo_passcode roominfo_container">
+                    <span>Raum-Code: <span class="roominfo"><?=$pass?></span></span>
+                </div>
             </div>
         </div>
     </main>
