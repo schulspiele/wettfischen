@@ -12,6 +12,7 @@ Statuscode | Meaning
 9 | Room is open for people to join
 
 ## Libraries used
-Source | License | Version
----|---|---
-gh@davidshimjs/qrcodejs | MIT | 12.03.2013 
+Task | Source | License | Version
+---|---|---|---
+Generating QR-Codes | gh@davidshimjs/qrcodejs | MIT | 12.03.2013 
+jquery | jquery.com | MIT | 3.3.1
