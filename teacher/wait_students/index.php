@@ -14,10 +14,10 @@
     $con = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
     if (mysqli_connect_errno()) exit("DB-Error");
     
-    if ($stmt = $con->prepare("SELECT passcode, fish FROM rooms WHERE namecode = ?")) {
+    if ($stmt = $con->prepare("SELECT require_pass, passcode, fish FROM rooms WHERE namecode = ?")) {
         $stmt->bind_param("s", $id);
         $stmt->execute();
-        $stmt->bind_result($passcode, $fish);
+        $stmt->bind_result($require_pass, $passcode, $fish);
         $stmt->fetch();
         $stmt->close();
     }
@@ -43,18 +43,25 @@
 
 <body>
     <main>
-        <div id="main_container">
-            <div class="container">
-                <div class="student_infotext">
-                    <h1>Bitte wählt wie viel ihr Fischen wollt</h1>
-                </div>
-                <div class="roominfo_id roominfo_container">
-                    <span>Raum-ID: <span class="roominfo"><?=$id?></span></span>
-                </div>
-                <div class="roominfo_passcode roominfo_container">
-                    <span>Raum-Code: <span class="roominfo"><?=$pass?></span></span>
-                </div>
+        <div class="container" id="main_container">
+            <div class="student_infotext">
+                <h1>Bitte wählt wie viel ihr Fischen wollt</h1>
             </div>
+            <div class="roominfo_id roominfo_container">
+                <span>Raum-ID: <span class="roominfo"><?=$id?></span></span>
+            </div>
+            <?php 
+                if($require_pass){
+                    echo '<div class="roominfo_passcode roominfo_container">
+                            <span>Raum-Passwort: <span class="roominfo">'.$passcode.'</span></span>
+                        </div>';
+                } else {
+                    echo '<script>
+                        document.getElementById("main_container").style.gridTemplateAreas = \'"student_infotext" "roominfo_id"\';
+                        document.getElementById("main_container").style.gridTemplateColumns = "1fr";
+                    </script>';
+                }
+            ?>
         </div>
     </main>
     <div class="container_url">

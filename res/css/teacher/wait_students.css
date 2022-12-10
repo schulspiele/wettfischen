@@ -21,11 +21,6 @@ main {
     color: var(--accent-color);
 }
 
-#main_container {
-    background-color: #888;
-    border-radius: 1rem;
-}
-
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
