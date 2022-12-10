@@ -29,8 +29,12 @@
 
 <body>
     <main>
-        <div class="title"></div>
-        <div class="number"></div>
+        <div class="title">
+            <h1>Bitte gib ein, wie viel du Fischen willst!</h1>
+        </div>
+        <div class="number">
+            <div id="number_display"></div>
+        </div>
         <div class="numpad">
             <div class="numpad_one numpad_key">1</div>
             <div class="numpad_two numpad_key">2</div>
@@ -47,6 +51,7 @@
         </div>
     </main>
     <script src="/res/js/jquery/jquery-3.6.1.min.js"></script>
+    <script src="/res/js/student/input.js"></script>
 </body>
 
 </html>
