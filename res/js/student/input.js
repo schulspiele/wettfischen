@@ -2,6 +2,7 @@ const number_display = document.getElementById("number_display");
 const numpad_keys = document.getElementsByClassName("numpad_key");
 
 let number = "";
+let room = new URLSearchParams(window.location.search).get("r");
 
 for (let i = 0; i < numpad_keys.length; i++) {
     numpad_keys[i].addEventListener("click", function() {
@@ -14,7 +15,13 @@ for (let i = 0; i < numpad_keys.length; i++) {
                 data: {
                     number: number
                 },
-                success: function(data) {}
+                success: function(data) {
+                    if (data == "success") {
+                        location.assign("/student/wait_teacher/?r=" + room);
+                    } else {
+                        console.log(data);
+                    }
+                }
             });
         } else if (number.length < 10) {
             number += numpad_keys[i].innerText;

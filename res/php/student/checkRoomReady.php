@@ -27,6 +27,7 @@
         $stmt->bind_result($status);
         $stmt->fetch();
         echo $status;
+        $_SESSION["room"] = $room;
         $stmt->close();
         exit();
     }
