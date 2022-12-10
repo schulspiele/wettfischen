@@ -9,8 +9,8 @@
     if(!isset($_SESSION["id"])) exit("error");
     $room = $_SESSION["id"];
 
-    // Set status column to 1 (where room = $room)
-    if($stmt = $con->prepare("UPDATE rooms SET status = 1 WHERE namecode = ?")){
+    // Set status column to 1 (where room = $room) and round = 1
+    if($stmt = $con->prepare("UPDATE rooms SET status = 1, round = 1 WHERE namecode = ?")){
         $stmt->bind_param("s", $room);
         $stmt->execute();
         $stmt->close();
