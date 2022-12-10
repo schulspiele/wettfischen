@@ -14,14 +14,22 @@
     $con = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
     if (mysqli_connect_errno()) exit("DB-Error");
     
-    if ($stmt = $con->prepare("SELECT require_pass, passcode, fish FROM rooms WHERE namecode = ?")) {
+    if ($stmt = $con->prepare("SELECT require_pass, passcode, fish, round FROM rooms WHERE namecode = ?")) {
         $stmt->bind_param("s", $id);
         $stmt->execute();
-        $stmt->bind_result($require_pass, $passcode, $fish);
+        $stmt->bind_result($require_pass, $passcode, $fish, $round);
         $stmt->fetch();
         $stmt->close();
     }
 
+    // Get number of users in room
+    if ($stmt = $con->prepare("SELECT COUNT(*) FROM users WHERE room = ?")) {
+        $stmt->bind_param("s", $id);
+        $stmt->execute();
+        $stmt->bind_result($num_users);
+        $stmt->fetch();
+        $stmt->close();
+    }
 
 ?>
 
@@ -72,25 +80,17 @@
     <div class="container_fishnum" id="container_fishnum">
         <i class="fa-solid fa-fish-fins"></i> <span id="fishnum">???</span>
     </div>
-    <div class="container_roomdetails">
-
+    <div id="skip_button" class="skip_button" onclick="room.skip_student_wait();">
+        Runde beenden <i class="fa-solid fa-forward"></i>
     </div>
-    <div class="container_build">
-
-    </div>
-    <div id="skip_button" class="skip_button" onclick="room.skip_student_wait();">Runde beenden <i class="fa-solid fa-forward"></i>
-    </div>
-    <div class="overlay">
-        <div class="overlay-content">
-            <button class="fullscreen-button" onclick="toggleFullScreen();">
-                <i class="fas fa-expand"></i>
-            </button>
-        </div>
+    <div class="people_voted">
+        <i class="fa-solid fa-person"></i>
+        <span id="people_voted">0</span> / <?=$num_users?>
     </div>
     <script src="/res/js/jquery/jquery-3.6.1.min.js"></script>
-    <script src="/res/js/teacher/fullscreen.js"></script>
     <script src="/res/js/teacher/gameplay.js"></script>
     <script src="/res/js/teacher/getFishNum.js"></script>
+    <script src="/res/js/teacher/getVoteNum.js"></script>
 </body>
 
 </html>

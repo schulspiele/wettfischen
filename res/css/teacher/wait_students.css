@@ -59,6 +59,16 @@ main {
     color: var(--accent2-color);
 }
 
+.people_voted {
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    font-size: 2.5rem;
+    border-radius: 1rem;
+    background-color: var(--accent-color);
+    padding: 0.5rem;
+}
+
 
 /* 
 Overlay
@@ -80,33 +90,4 @@ Overlay
 
 .skip_button:hover {
     transform: translateY(4px);
-}
-
-.overlay {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    padding: 1rem;
-    border-radius: 10px;
-    background-color: var(--background3-color);
-}
-
-.overlay button {
-    background-color: var(--background3-color);
-    border: #888 1px solid;
-    color: var(--text-color);
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    padding: 1rem;
-}
-
-.overlay button:hover,
-.settings_toggle_active {
-    transform: translateY(-4px);
-    background-color: #888 !important;
-}
-
-#fishnum_settings_input {
-    display: none;
 }
