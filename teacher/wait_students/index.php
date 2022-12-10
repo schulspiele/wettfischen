@@ -69,7 +69,7 @@
             https://<?=$_SERVER['HTTP_HOST']?>
         </div>
     </div>
-    <div class="container_fishnum">
+    <div class="container_fishnum" id="container_fishnum">
         <i class="fa-solid fa-fish-fins"></i> <span id="fishnum">???</span>
     </div>
     <div class="container_roomdetails">
@@ -90,6 +90,7 @@
     <script src="/res/js/jquery/jquery-3.6.1.min.js"></script>
     <script src="/res/js/teacher/fullscreen.js"></script>
     <script src="/res/js/teacher/gameplay.js"></script>
+    <script src="/res/js/teacher/getFishNum.js"></script>
 </body>
 
 </html>
