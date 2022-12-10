@@ -3,7 +3,7 @@ let showFishNum = false;
 function getFishNum() {
     $.ajax({
         url: "/res/php/teacher/getFishNum.php",
-        type: "POST",
+        type: "GET",
         data: {},
         success: function(data) {
             document.getElementById("fishnum").innerText = data;
