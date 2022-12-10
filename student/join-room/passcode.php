@@ -28,7 +28,8 @@
                 </div>
                 <div>
                     <!-- Button that redirects to /student/room/?r=[room] -->
-                    <button id="roomcode_submit" onclick="location.href = '/student/room/?r=<?=$_GET['r']?>&c=' + document.getElementById('roomcode_input').value;">Raum prüfen</button>
+                    <!-- Roomcode needs to be all uppercase -->
+                    <button id="roomcode_submit" onclick="location.href = '/student/room/?r=<?=$_GET['r']?>&c=' + document.getElementById('roomcode_input').value.toUpperCase();">Raum prüfen</button>
                 </div>
             </div>
         </div>
