@@ -1,0 +1,83 @@
+main {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 2fr;
+    gap: 0px 0px;
+    grid-template-areas: "title" "number" "numpad";
+}
+
+.title {
+    grid-area: title;
+}
+
+.number {
+    grid-area: number;
+}
+
+.numpad {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "numpad_one numpad_two numpad_three" "numpad_four numpad_five numpad_six" "numpad_seven numpad_eight numpad_nine" "numpad_clear numpad_zero numpad_check";
+    grid-area: numpad;
+}
+
+.numpad_key {
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--text-color);
+    font-size: 15vmin;
+}
+
+.numpad_one {
+    grid-area: numpad_one;
+}
+
+.numpad_two {
+    grid-area: numpad_two;
+}
+
+.numpad_three {
+    grid-area: numpad_three;
+}
+
+.numpad_four {
+    grid-area: numpad_four;
+}
+
+.numpad_five {
+    grid-area: numpad_five;
+}
+
+.numpad_six {
+    grid-area: numpad_six;
+}
+
+.numpad_seven {
+    grid-area: numpad_seven;
+}
+
+.numpad_eight {
+    grid-area: numpad_eight;
+}
+
+.numpad_nine {
+    grid-area: numpad_nine;
+}
+
+.numpad_clear {
+    grid-area: numpad_clear;
+    color: #f00;
+}
+
+.numpad_zero {
+    grid-area: numpad_zero;
+}
+
+.numpad_check {
+    grid-area: numpad_check;
+    color: #0f0;
+}
