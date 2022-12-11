@@ -80,10 +80,10 @@
     <div class="container_fishnum" id="container_fishnum">
         <i class="fa-solid fa-fish-fins"></i> <span id="fishnum">???</span>
     </div>
-    <div id="skip_button" class="skip_button" onclick="room.skip_student_wait();">
+    <div id="skip_button" class="skip_button" onclick="room.end_round(true);">
         Runde beenden <i class="fa-solid fa-forward"></i>
     </div>
-    <div class="people_voted">
+    <div class="people_voted" id="people_voted_container">
         <i class="fa-solid fa-person"></i>
         <span id="people_voted">0</span> / <?=$num_users?>
     </div>
