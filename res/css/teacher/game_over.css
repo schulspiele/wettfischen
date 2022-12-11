@@ -1,0 +1,87 @@
+main {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2.5fr 2fr;
+    grid-template-rows: 1fr 2fr;
+    gap: 0px 0px;
+    grid-template-areas: "gameover_info gameover_info" "scorelist stats";
+}
+
+.gameover_info {
+    grid-area: gameover_info;
+    background-color: var(--background3-color);
+    display: grid;
+    place-items: center;
+}
+
+.gameover_container {
+    background-color: var(--background2-color);
+    border-radius: 1rem;
+    font-size: 3rem;
+    padding: 1rem;
+    width: fit-content;
+    color: var(--text2-color);
+}
+
+#gameover_note {
+    font-size: 150%;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+.scorelist {
+    grid-area: scorelist;
+    border: 1px solid var(--background4-color);
+}
+
+.stats {
+    grid-area: stats;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "stat-player_num stat-fish_start" "stat_rounds stat-fish_end";
+}
+
+.stat-player_num {
+    grid-area: stat-player_num;
+}
+
+.stat-fish_start {
+    grid-area: stat-fish_start;
+}
+
+.stat-fish_end {
+    grid-area: stat-fish_end;
+}
+
+.stat_rounds {
+    grid-area: stat_rounds;
+}
+
+.stat-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    gap: 0px 0px;
+    grid-template-areas: "stats-item_title" "stats-item_content";
+    border: 1px solid var(--background4-color);
+}
+
+.stats-item_title {
+    grid-area: stats-item_title;
+    font-size: 2rem;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+
+.stats-item_content {
+    grid-area: stats-item_content;
+    font-size: 4rem;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    color: var(--accent-color);
+}

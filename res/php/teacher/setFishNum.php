@@ -10,8 +10,8 @@
     $room = $_SESSION['id'];
     $fish_num = $_POST["fish_num"];
 
-    if ($stmt = $con->prepare("UPDATE rooms SET fish = ? WHERE namecode = ?")) {
-        $stmt->bind_param('is', $fish_num, $room);
+    if ($stmt = $con->prepare("UPDATE rooms SET fish = ?, fish_start = ? WHERE namecode = ?")) {
+        $stmt->bind_param('iis', $fish_num, $fish_num, $room);
         $stmt->execute();
     }
 

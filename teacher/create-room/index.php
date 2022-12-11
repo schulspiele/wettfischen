@@ -46,8 +46,8 @@ while($checking_id_double){
             $new_pass = chr(generateID(1) + 64) . chr(generateID(1) + 64) . chr(generateID(1) + 64) . chr(generateID(1) + 64);
             $fish = rand(10, 1000);
 
-            $stmt = $con->prepare("INSERT INTO rooms (namecode, passcode, fish) VALUES (?, ?, ?)");
-            $stmt->bind_param('ssi', $new_id, $new_pass, $fish);
+            $stmt = $con->prepare("INSERT INTO rooms (namecode, passcode, fish, fish_start) VALUES (?, ?, ?, ?)");	
+            $stmt->bind_param('ssii', $new_id, $new_pass, $fish, $fish);
             $stmt->execute();
             $stmt->close();
             $con->close();
