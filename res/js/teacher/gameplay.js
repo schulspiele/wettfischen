@@ -21,5 +21,8 @@ const room = {
                 else console.log("Unknown error ending round");
             }
         });
+    },
+    restart: function() {
+        location.assign("/teacher/end_room/");
     }
 }

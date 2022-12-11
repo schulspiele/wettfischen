@@ -86,7 +86,11 @@
             </div>
         </div>
     </main>
+    <div class="restart_button" onclick="room.restart();">
+        <i class="fas fa-redo-alt"></i>
+    </div>
     <script src="/res/js/jquery/jquery-3.6.1.min.js"></script>
+    <script src="/res/js/teacher/gameplay.js"></script>
 </body>
 
 </html>
