@@ -15,19 +15,18 @@
     if (mysqli_connect_errno()) exit("DB-Error");
     
     // Get user details 
-    if ($stmt = $con->prepare("SELECT COUNT(*), SUM(fish_ges) FROM users WHERE room = ?")) {
+    if ($stmt = $con->prepare("SELECT COUNT(*) FROM users WHERE room = ?")) {
         $stmt->bind_param("s", $id);
         $stmt->execute();
-        $stmt->bind_result($num_users, $fish_ges);
+        $stmt->bind_result($num_users);
         $stmt->fetch();
         $stmt->close();
-        if (!isset($fish_ges)) $fish_ges = 0;
     }
     // Get room details
-    if ($stmt = $con->prepare("SELECT fish_start, round FROM rooms WHERE namecode = ?")) {
+    if ($stmt = $con->prepare("SELECT fish_start, round, fish_ges FROM rooms WHERE namecode = ?")) {
         $stmt->bind_param("s", $id);
         $stmt->execute();
-        $stmt->bind_result($fish_start, $rounds_played);
+        $stmt->bind_result($fish_start, $rounds_played, $fish_ges);
         $stmt->fetch();
         $stmt->close();
     }
