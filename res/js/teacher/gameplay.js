@@ -13,6 +13,9 @@ const room = {
         if (!confirmed) return;
         location.assign("/teacher/round_end/");
     },
+    next_round: function() {
+        location.assign("/teacher/next_round/");
+    },
     restart: function() {
         location.assign("/teacher/end_room/");
     }
