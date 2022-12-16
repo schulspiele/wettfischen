@@ -15,8 +15,8 @@
         $stmt->execute();
         $stmt->close();
         // Increase fish_ges in room
-        if ($stmt = $con->prepare("UPDATE rooms SET fish_ges = fish_ges + ? WHERE namecode = ?")) {
-            $stmt->bind_param('is', $fish_number, $_SESSION['room']);
+        if ($stmt = $con->prepare("UPDATE rooms SET fish_ges = fish_ges + ?, fish_round = fish_round + ? WHERE namecode = ?")) {
+            $stmt->bind_param('iis', $fish_number, $fish_number, $_SESSION['room']);
             $stmt->execute();
             $stmt->close();
             exit("success");

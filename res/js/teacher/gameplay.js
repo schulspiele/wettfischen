@@ -11,16 +11,7 @@ const room = {
     },
     end_round: function(confirmed) {
         if (!confirmed) return;
-        $.ajax({
-            url: '/res/php/teacher/endRound.php',
-            type: 'POST',
-            success: function(data) {
-                if (data == "error") console.log("Error ending round")
-                else if (data == "fail") location.assign("/teacher/game_over/")
-                else if (data == "success") location.assign("/teacher/round_end/")
-                else console.log("Unknown error ending round");
-            }
-        });
+        location.assign("/teacher/round_end/");
     },
     restart: function() {
         location.assign("/teacher/end_room/");
