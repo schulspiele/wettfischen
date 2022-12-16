@@ -30,7 +30,12 @@
         $stmt->fetch();
         $stmt->close();
     }
-
+    // Set room status to 2
+    if ($stmt = $con->prepare("UPDATE rooms SET status = 2 WHERE namecode = ?")) {
+        $stmt->bind_param("s", $id);
+        $stmt->execute();
+        $stmt->close();
+    }
 
 ?>
 
