@@ -20,7 +20,7 @@
         $stmt->bind_result($fish_in_room, $fish_votes);
         $stmt->fetch();
         $stmt->close();
-        if($fish_votes > $fish_in_room) {
+        if($fish_votes >= $fish_in_room) {
             header("Location: /teacher/game_over/");
         } else {
             $fish_in_room = $fish_in_room - $fish_votes;
