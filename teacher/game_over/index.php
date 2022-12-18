@@ -23,10 +23,10 @@
         $stmt->close();
     }
     // Get room details
-    if ($stmt = $con->prepare("SELECT fish_start, round, fish_ges FROM rooms WHERE namecode = ?")) {
+    if ($stmt = $con->prepare("SELECT round, fish_start, fish, fish_round, fish_ges FROM rooms WHERE namecode = ?")) {
         $stmt->bind_param("s", $id);
         $stmt->execute();
-        $stmt->bind_result($fish_start, $rounds_played, $fish_ges);
+        $stmt->bind_result($rounds_played, $fish_start, $fish, $fish_round, $fish_ges);
         $stmt->fetch();
         $stmt->close();
     }
@@ -73,8 +73,8 @@
         </div>
         <div class="stats">
             <div class="stat-player_num stat-container">
-                <div class="stats-item_title">Spieler*innen</div>
-                <div class="stats-item_content"><?=$num_users?></div>
+                <div class="stats-item_title">Überfischt um</div>
+                <div class="stats-item_content"><?=(0-($fish-$fish_round))?></div>
             </div>
             <div class="stat-fish_start stat-container">
                 <div class="stats-item_title">Fische beim Start</div>
