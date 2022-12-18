@@ -10,8 +10,8 @@
     $fish_number = $_POST['number'];
 
     // Increase round number and set fish number
-    if ($stmt = $con->prepare("UPDATE users SET round = round + 1, fish = ? WHERE room = ? AND name = ?")) {
-        $stmt->bind_param('iis', $fish_number, $_SESSION['room'], $_SESSION['displayname']);
+    if ($stmt = $con->prepare("UPDATE users SET round = round + 1, fish = ?, fish_ges = fish_ges + ? WHERE room = ? AND name = ?")) {
+        $stmt->bind_param('iiis', $fish_number, $fish_number, $_SESSION['room'], $_SESSION['displayname']);
         $stmt->execute();
         $stmt->close();
         // Increase fish_ges in room
